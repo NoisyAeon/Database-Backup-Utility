@@ -1,2 +1,13 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using Database_Backup_Utility.FileLogger;
+
+try
+{
+
+
+}
+catch (Exception exception)
+{
+
+    Log.Fatal(exception);
+}
+
