@@ -16,7 +16,7 @@ namespace Database_Backup_Utility.src.Database_Types
         public abstract T Connection { get; protected set; }
         protected string ConnectionString
         {
-            get { return $"Server={Server};Database={Name};User Id={User};_password={_password};"; }
+            get { return $"Server={Server};Database={Name};User Id={User};Password={_password};"; }
         }
 
         public abstract void Dispose();
