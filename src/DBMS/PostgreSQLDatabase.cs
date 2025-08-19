@@ -7,11 +7,11 @@ using Database_Backup_Utility.src.Database_Types;
 
 namespace Database_Backup_Utility.src.DBMS
 {
-    class PostgreSQLDatabase: Database
-    {
-        public override void Connect()
-        {
-            // ToDo
-        }
-    }
+    //class PostgreSQLDatabase: Database<>
+    //{
+    //    public override void Connect()
+    //    {
+    //        // ToDo
+    //    }
+    //}
 }
