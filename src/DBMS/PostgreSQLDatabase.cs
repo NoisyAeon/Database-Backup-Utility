@@ -1,21 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Database_Backup_Utility.FileLogger;
+﻿using Database_Backup_Utility.FileLogger;
 using Database_Backup_Utility.src.Database_Types;
-using Npgsql;
+using Devart.Data.PostgreSql;
+
 
 namespace Database_Backup_Utility.src.DBMS
 {
-    public class PostgreSQLDatabase : Database<NpgsqlConnection>
+    public class PostgreSQLDatabase : Database<PgSqlConnection>
     {
-        public override NpgsqlConnection Connection { get; protected set; }
+        public override PgSqlConnection Connection { get; protected set; }
         public PostgreSQLDatabase(string server, string name, string user, string password) : base(server, name, user,
             password)
         {
-            Connection = new NpgsqlConnection(ConnectionString);
+            Connection = new PgSqlConnection(ConnectionString);
             Connection.Open();
             Log.Debug($"Successfully opened connection to database {Name} from PostgreSQL Server at {Server}");
 
@@ -28,5 +24,11 @@ namespace Database_Backup_Utility.src.DBMS
 
         }
 
+        protected override void CreateBackupFile(string path)
+        {
+            var pgSqlDump = new PgSqlDump();
+            pgSqlDump.Connection = Connection;
+            pgSqlDump.Backup(path);
+        }
     }
 }

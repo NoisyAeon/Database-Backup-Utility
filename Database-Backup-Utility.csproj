@@ -9,7 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Devart.Data.PostgreSql" Version="8.4.290" />
+    <PackageReference Include="dotConnect.Express.for.MySQL" Version="9.4.290" />
     <PackageReference Include="MySql.Data" Version="9.4.0" />
+    <PackageReference Include="MySqlBackup.NET" Version="2.6.5" />
+    <PackageReference Include="MySqlConnector" Version="2.4.0" />
     <PackageReference Include="Npgsql" Version="9.0.3" />
     <PackageReference Include="Serilog" Version="4.3.0" />
     <PackageReference Include="Serilog.Sinks.Console" Version="6.0.0" />
